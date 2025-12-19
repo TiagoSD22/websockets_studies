@@ -103,7 +103,7 @@ const server = net.createServer((socket) => {
       );
 
       isUpgraded = true;
-      buffer = buffer.slice(reqEnd + 4); // remove HTTP headers
+      buffer = buffer.subarray(reqEnd + 4); // remove HTTP headers
     }
 
     // Frame processing loop
